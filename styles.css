@@ -1,0 +1,110 @@
+:root {
+  --primary-static-color: #FBDC57;
+  --secondary-static-color: 222222;
+  --primary-color: var(--primary-static-color);
+  --secondary-color: var(--secondary-static-color);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-color: var(--secondary-static-color);
+    --secondary-color: var(--primary-static-color);
+  }
+}
+
+#A\#0 {
+  margin-left: 33%;  /* The first A Sharp key needs special positioning. */
+  position: absolute;
+}
+
+.A\# {
+  margin-left: 82%;
+  position: absolute;
+}
+
+.C\# {
+  margin-left: 10%;
+  position: absolute;
+}
+
+.D\# {
+  margin-left: 24%;
+  position: absolute;
+}
+
+.F\# {
+  margin-left: 52%;
+  position: absolute;
+}
+
+.G\# {
+  margin-left: 67%;
+  position: absolute;
+}
+
+.container {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  font-family: sans-serif;
+  font-size: xx-large;
+}
+
+.keyboard {
+  display: flex; /* We want all the octaves to be horizontal. */
+  height: 25%; /* We don't want our keyboard keys to be too long! */
+}
+
+.naturalNote {
+  background: linear-gradient(to bottom, ivory 0%, #e9e9e9 100%); /* See below. */
+  border-bottom: 1px solid #bbb; /* Thanks to https://codepen.io/zastrow/pen/oDBki. */
+  border-left: 1px solid #bbb; /* Thanks to https://codepen.io/zastrow/pen/oDBki. */
+  border-radius: 0 0 5px 5px; /* Thanks to https://codepen.io/zastrow/pen/oDBki. */
+  box-shadow: -1px 0 0 rgba(255, 255, 240, 0.8) inset, 0 0 5px #ccc inset,
+    0 0 3px rgba(0,0,0,0.2);  /* Thanks to https://codepen.io/zastrow/pen/oDBki. */
+  color: black; /* Note names should always be visible. */
+  cursor: pointer; /* Let users know they can click these keys! */
+}
+
+.naturalNote.active {
+  background:linear-gradient(to bottom, ivory 0%, #e9e9e9 100%); /* See below. */
+  box-shadow: 2px 0 3px rgba(0,0,0,0.1) inset, -5px 5px 20px rgba(0,0,0,0.2) inset,
+    0 0 3px rgba(0,0,0,0.2); /* Thanks to https://codepen.io/zastrow/pen/oDBki. */
+}
+
+.naturalNote > div {
+  pointer-events: none; /* Clicking key text should let you play a sound. */
+  position: relative; /* Necessary to make labels appear at bottoms of keys. */
+  opacity: 0.5; /* Make note labels more subtle. */
+  top: 75%; /* Natural notes should have their labels near the bottom. */
+}
+
+.octave {
+  display: flex; /* We want a horizontal layout for keys in an octave. */
+  position: relative; /* Necessary to make sharp and flat keys resize properly. */
+}
+
+.sharpOrFlatNote { /* Sharp and flat notes should have black backgrounds. */
+  background: linear-gradient(45deg, #222 0%, #555 100%); /* See below. */
+  border-radius: 0 0 3px 3px; /* Thanks to https://codepen.io/zastrow/pen/oDBki. */
+  box-shadow: -1px -1px 2px rgba(255, 255, 255, 0.2) inset, /* See above. */
+    0 -5px 2px 3px rgba(0, 0, 0, 0.6) inset, 0 2px 4px rgba(0, 0, 0, 0.5);
+  color: ivory; /* We want to be able to see note names. */
+  cursor: pointer;  /* We want users to know they can click sharp and flat keys. */
+  font-size: medium; /* We want notes to fit on flat and sharp notes' keys. */
+  height: 67%; /* Sharp and flat keys typically don't extend the full length. */
+  width: min-content; /* Each key should be at least as wide as the text in it. */
+  z-index: 2; /* Sharp and flat keys should appear "on top" of other keys! */
+}
+
+.sharpOrFlatNote.active { /* Thanks to https://codepen.io/zastrow/pen/oDBki. */
+  background: linear-gradient(to right, #444 0%, #222 100%);
+}
+
+.sharpOrFlatNote > div {
+  pointer-events: none; /* Clicking key text should let you play a sound. */
+}
+
+.waveformSelector, .volumeSection {
+  left: 45%;
+  position: fixed;
+  text-align: center;
+}

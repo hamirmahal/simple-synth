@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "lib": ["DOM", "ES2017"] // "ES2017" to allow use of Object.entries()
+    },
+    "files": [
+        "declarations.d.ts", // Solely present to remove webkitAudioContext type issue
+        "script.ts"
+    ]
+}

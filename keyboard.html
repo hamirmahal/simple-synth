@@ -1,0 +1,29 @@
+<title>Simple Synth</title>
+<link href="./styles.css" rel="stylesheet" />
+<body class="container">
+    <!-- <div class="staff">Add later</div> -->
+    <div class="settingsSection">
+        <div class="waveformSelector">
+            <div>Waveform</div><br />
+            <select name="waveform">
+                <option value="custom">Custom</option>
+                <option value="sawtooth">Sawtooth</option>
+                <option value="sine">Sine</option>
+                <option value="square">Square</option>
+                <option value="triangle">Triangle</option>
+            </select>
+        </div>
+    </div>
+    <br /><br /><br /><main class="keyboard"></main><br />
+    <div class="volumeSection">
+        <div>Volume</div><br />
+        <div class="volumeSliderContainer">
+            <input list="volumes" max="1.0" min="0.0" name="volume" step="0.01" type="range" value="0.5">
+            <datalist id="volumes">
+                <option label="Mute" value="0.0">
+                <option label="100%" value="1.0">
+            </datalist>
+        </div>
+    </div>
+</body>
+<script src="./script.js"></script>
