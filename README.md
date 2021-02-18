@@ -2,6 +2,8 @@ This is a simple synthesizer I built that uses the steps in an [MDN tutorial on 
 
 It also heavily uses styling from a very aesthetic [CSS Piano](https://codepen.io/zastrow/pen/oDBki).
 
+You can view a live demonstration of this repository at [https://hamirmahal.github.io/simple-synth/](https://hamirmahal.github.io/simple-synth/).
+
 This is what the keyboard looks like with a day theme active.
 
 ![simple synth day theme](img/simple-synth-day-theme.png)
